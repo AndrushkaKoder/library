@@ -9,6 +9,6 @@ function config(string $file, string $path): ?string
 
 function component($path): void
 {
-	$pathToComponent  = TEMPLATE_PATH . '/' . $path . '.php';
-	if(is_file($pathToComponent)) include $pathToComponent;
+	$pathToComponent = TEMPLATE_PATH . '/' . $path . '.php';
+	if (is_file($pathToComponent)) include $pathToComponent;
 }

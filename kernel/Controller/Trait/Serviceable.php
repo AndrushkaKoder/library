@@ -32,7 +32,7 @@ trait Serviceable
 		return $this->view;
 	}
 
-	public function setModel(Database $database)
+	public function setModel(Database $database): void
 	{
 		$this->database = $database;
 	}

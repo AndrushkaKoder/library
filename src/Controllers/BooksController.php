@@ -3,18 +3,17 @@
 namespace App\Controllers;
 
 use App\kernel\Controller\BaseController;
-use http\Header;
 
 class BooksController extends BaseController
 {
-	public function index()
+	public function index(): void
 	{
 		$books = $this->model()->select('books');
 
 		$this->view()->page('pages.books.index', ['books' => $books]);
 	}
 
-	public function show()
+	public function show(): void
 	{
 		$book = $this->model()->first('books', $this->request()->input('id'));
 		if ($book) {
@@ -23,12 +22,12 @@ class BooksController extends BaseController
 		}
 	}
 
-	public function add()
+	public function add(): void
 	{
 		$this->view()->page('pages.books.add');
 	}
 
-	public function create()
+	public function create(): void
 	{
 		$requestData = array_map(function ($item) {
 			return htmlspecialchars($item);

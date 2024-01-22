@@ -2,8 +2,6 @@
 
 namespace App\kernel\Database;
 
-use App\kernel\Exception\DatabaseException;
-
 class Database
 {
 	private \PDO $pdo;
@@ -78,7 +76,7 @@ class Database
 		return $statement->fetch(\PDO::FETCH_ASSOC);
 	}
 
-	public function update(string $table, int $id, array $conditions = [])
+	public function update(string $table, int $id, array $conditions = []): void
 	{
 		$set = '';
 		if ($conditions) {
@@ -91,8 +89,6 @@ class Database
 
 		$statement = $this->pdo->prepare($query);
 		$statement->execute($conditions);
-
-		return $statement->columnCount();
 	}
 
 	public function delete(string $table, array $conditions = []): void

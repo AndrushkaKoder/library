@@ -6,7 +6,7 @@ use App\kernel\Controller\BaseController;
 
 class IndexController extends BaseController
 {
-	public function index()
+	public function index(): void
 	{
 		$this->view()->page('pages.index.home');
 	}

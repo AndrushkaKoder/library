@@ -1,6 +1,7 @@
 <?php
 /**
- * @var $book
+ * @var array $book
+ * @var array $authors
  */
 ?>
 <?php component('head'); ?>
